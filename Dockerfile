@@ -1,8 +1,8 @@
 FROM webdevops/php-apache:debian-9	
 MAINTAINER Sohaib Afifi <me@sohaibafifi.com>
 
-# RUN echo "Acquire::http::proxy \"http://cache-pers.irsf:3128/\"; " > /etc/apt/apt.conf.d/99-proxy
-# ENV all_proxy "http://cache-pers.irsf:3128"
+# RUN echo "Acquire::http::proxy \"http://cache-adm.univ-artois.fr:8080/\"; " > /etc/apt/apt.conf.d/99-proxy
+# ENV all_proxy "http://cache--adm.univ-artois.fr:8080"
 
 RUN /usr/local/bin/apt-install \
   		nano \
@@ -15,8 +15,6 @@ RUN /usr/local/bin/apt-install \
         mailutils \
         ssmtp \
 	    php7.0-pgsql \
-        mysql-client \
-        postgresql-client \
    && docker-image-cleanup
 
 COPY ./root /
